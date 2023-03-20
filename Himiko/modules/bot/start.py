@@ -50,6 +50,6 @@ async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""<b>👋 **Hallo {message.from_user.first_name}** \n
 💭 **Is there anything I can help? **
-💡 **If you want to make a bot\nYou can Contaci @d4msy.**
+💡 **If you want to make a bot\nYou can Contact @d4msy.**
 </b>""",
     )
