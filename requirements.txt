@@ -26,7 +26,7 @@ pytgcalls==3.0.0.dev22
 python-dotenv
 requests
 speedtest-cli==2.1.3
-sqlalchemy
+sqlalchemy==1.3.23
 telegraph
 textblob
 tgcrypto
