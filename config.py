@@ -34,7 +34,7 @@ OWNER_ID = getenv("OWNER_ID", "1725671304")
 BOT_TOKEN = getenv("BOT_TOKEN", "6086469052:AAGKpWI9L_srK9qOnIXAe5v2Bp7LkFrDkig")
 OPENAI_API_KEY = getenv("OPENAI_API_KEY", "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")
 CHANNEL = getenv("CHANNEL", "diarydam")
-DB_URL = getenv("DATABASE_URL", "")
+DB_URL = getenv("DATABASE_URL", "postgres://ycjuplqt:FLd3kOUFjEcByXMheu47fDGVCIu6i90d@mel.db.elephantsql.com/ycjuplqt")
 GIT_TOKEN = getenv("GIT_TOKEN", "")
         
 GROUP = getenv("GROUP", "HimikoSupportChat")
