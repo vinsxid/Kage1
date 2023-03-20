@@ -73,19 +73,14 @@ async def alive_function(message, answers):
         status = "premium [owner]"
     elif message._client.me.id in SUDO_ID:
         status = "premium [admins]"
-        remaining_days = "None"
     else:
         status = "premium"
     start = datetime.now()
     await message._client.invoke(Ping(ping_id=0))
     ping = (datetime.now() - start).microseconds / 1000
     uptime = await get_readable_time((time.time() - StartTime))
-    remaining_days = await get_expired_date(ex.id)
-    if remaining_days is None:
-        remaining_days = "Not yet defined"
     msg = (f"<b>HimikoUbot</b>\n"
         f"   <b>status: {status}</b>\n"
-        f"     <b>expires_on:</b> <code>{remaining_days}</code>\n"
         f"     <b>dc_id: <code>{message._client.me.dc_id}</b>\n"
         f"     <b>ping_dc:</b> <code>{ping} ms</code>\n"
         f"     <b>peer_users:</b> <code>{users} users</code>\n"
