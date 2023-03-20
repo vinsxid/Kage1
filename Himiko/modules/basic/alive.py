@@ -9,15 +9,15 @@ from pyrogram import Client, enums, filters
 from pyrogram.types import *
 
 
-from UbotSin import CMD_HELP, StartTime, app, ids
+from Himiko import CMD_HELP, StartTime, app, ids
 from pyrogram.raw.functions import Ping
 from Himiko.utils import get_readable_time
 from pyrogram import *
 from config import *
 from Himiko import *
 
-OWNER_ID = 1725671304
-SUDO_ID = [1546078624, 1738637033, 1423479724, 957122139]
+OWNER_ID = [1725671304, 1546078624]
+SUDO_ID = [1738637033, 1423479724, 957122139]
 
 
 @Client.on_message(filters.command(["miko", "alive"], "") & filters.me)
