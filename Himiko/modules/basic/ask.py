@@ -39,7 +39,7 @@ async def openai(client: Client, message: Message):
     except Exception:
         await msg.edit("There is an error!!\nYou have not entered OPENAI_API_KEY")
     
-@sin.on_message(filters.command(["img"], "") & filters.me)
+@Client.on_message(filters.command(["img"], "") & filters.me)
 async def _(client, message):
     Tm = await message.reply("<code>Processing...</code>")
     if len(message.command) < 2:
