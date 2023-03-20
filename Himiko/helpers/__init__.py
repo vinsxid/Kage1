@@ -14,7 +14,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-DB_URL = "postgres://ycjuplqt:FLd3kOUFjEcByXMheu47fDGVCIu6i90d@mel.db.elephantsql.com/ycjuplqt"
+DB_URL = "postgres://cnblatro:BffSNIY-ZHwVGU75Xcd_TE2EaINGQvgE@tiny.db.elephantsql.com/cnblatro"
 
 SPAMBOT = "SPAMBOT"
 
