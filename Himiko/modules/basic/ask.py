@@ -5,7 +5,7 @@ from pyrogram.errors import MessageNotModified
 from Himiko.helpers.basic import *
 from Himiko.helpers.adminHelpers import DEVS
 from config import *
-from Himiko import CMD_HANDLER as cmd
+from config import CMD_HANDLER as cmd
 from Himiko.core.ai import OpenAi
 from Himiko.utils import *
 from .help import add_command_help
