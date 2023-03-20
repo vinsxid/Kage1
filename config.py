@@ -11,8 +11,8 @@ PREFIX = ["^", "?", "-", "+"]
 cmd = [".", "?", "!", "("] # cmd custom
 
 
-API_HASH = getenv("API_HASH", "")
-API_ID = int(getenv("API_ID", ""))
+API_HASH = getenv("API_HASH", "9317779")
+API_ID = int(getenv("API_ID", "e2432085a412bbc89e1d5bbcd72a7f0d"))
 BLACKLIST_CHAT = getenv("BLACKLIST_CHAT", None)
 if not BLACKLIST_CHAT:
     BLACKLIST_CHAT = [-1001599474353]
@@ -25,7 +25,7 @@ BLACKLIST_GCAST = list(
         ).split(),
     )
 )
-BOTLOG_CHATID = int(getenv("BOTLOG_CHATID") or 0)
+BOTLOG_CHATID = int(getenv("BOTLOG_CHATID"), "-1001599474353")
 BOT_VER = "2.1.5"
 BRANCH = getenv("BRANCH", "master") #don't change
 CMD_HANDLER = [".", "?", "!", "(", "-"]
@@ -34,14 +34,14 @@ OWNER_ID = getenv("OWNER_ID", "1725671304")
 BOT_TOKEN = getenv("BOT_TOKEN", "6086469052:AAGKpWI9L_srK9qOnIXAe5v2Bp7LkFrDkig")
 OPENAI_API_KEY = getenv("OPENAI_API_KEY", "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")
 CHANNEL = getenv("CHANNEL", "diarydam")
-DB_URL = getenv("DATABASE_URL", "")
+DB_URL = getenv("DATABASE_URL", "postgres://ycjuplqt:FLd3kOUFjEcByXMheu47fDGVCIu6i90d@mel.db.elephantsql.com/ycjuplqt")
 GIT_TOKEN = getenv("GIT_TOKEN", "")
         
 GROUP = getenv("GROUP", "HimikoSupportChat")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 REPO_URL = getenv("REPO_URL", "https://github.com/d4msy/HimikoUbot")
-STRING_SESSION1 = getenv("STRING_SESSION1", "")
+STRING_SESSION1 = getenv("STRING_SESSION1", "BQCOLZMAg5NLzEOYbdP_MoKSvHEP71pjToU4b9qACfVeNiJeB7GzH5dV3tshebt4Hv0tH6U7d5R9vMRuK0iCa71VMrqsKXd9MwXh2omd_wujYbgrMSTS0UNToZuz4VJ2eypklQY3JcOCpYjHUuqs-weKKQMT7y5jVaoFpel_nmI0jx6y7uwUnuZvgFCHl7UJTLSjvAzOpKfmHRlulthK78HWM4XlWLOIgCWsZzurm6fdlFCsXHygDAkgsl6im4r0vaI5FNBcssJcSJR9HxZko1hZAJaZeee3aKB-4NfArWXseivbT9BZ0Uih9dPiV-7xUqBG0EXW8mduL-_79zfqx2GKw0kV3gAAAABcJ0mgAA")
 STRING_SESSION2 = getenv("STRING_SESSION2", "")
 STRING_SESSION3 = getenv("STRING_SESSION3", "")
 STRING_SESSION4 = getenv("STRING_SESSION4", "")
