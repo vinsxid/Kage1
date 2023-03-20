@@ -11,8 +11,8 @@ PREFIX = ["^", "?", "-", "+"]
 cmd = [".", "?", "!", "("] # cmd custom
 
 
-API_HASH = getenv("API_HASH", "9317779")
-API_ID = int(getenv("API_ID", "e2432085a412bbc89e1d5bbcd72a7f0d"))
+API_HASH = getenv("API_HASH", "e2432085a412bbc89e1d5bbcd72a7f0d")
+API_ID = int(getenv("API_ID", "9317779"))
 BLACKLIST_CHAT = getenv("BLACKLIST_CHAT", None)
 if not BLACKLIST_CHAT:
     BLACKLIST_CHAT = [-1001599474353]
