@@ -25,7 +25,7 @@ BLACKLIST_GCAST = list(
         ).split(),
     )
 )
-BOTLOG_CHATID = int(getenv("BOTLOG_CHATID"), "-1001599474353")
+BOTLOG_CHATID = int(getenv("BOTLOG_CHATID", "-1001599474353")
 BOT_VER = "2.1.5"
 BRANCH = getenv("BRANCH", "master") #don't change
 CMD_HANDLER = [".", "?", "!", "(", "-"]
