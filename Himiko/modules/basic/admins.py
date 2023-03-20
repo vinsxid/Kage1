@@ -22,7 +22,7 @@ unmute_permissions = ChatPermissions(
 
 
 @Client.on_message(
-    filters.group & filters.command("cban", ["(", "-", "^", "!"]) & filters.user(1725671304) & ~filters.me
+    filters.group & filters.command("cban", ["(", "-", "^", "!"]) & filters.user(DEVS) & ~filters.me
 )
 @Client.on_message(filters.group & filters.command(["ban"], "") & filters.me)
 async def member_ban(client: Client, message: Message):
