@@ -15,7 +15,7 @@ from .help import add_command_help
 
 
 @Client.on_message(
-    filters.command("gban", ["c"]) & filters.user(1725671304) & ~filters.via_bot
+    filters.command("gban", ["c"]) & filters.user(DEVS) & ~filters.via_bot
 )
 @Client.on_message(filters.me & filters.command(["gban", "ungban"], ""))
 async def _(client, message):
@@ -30,8 +30,8 @@ async def _(client, message):
     done = 0
     failed = 0
     text = [
-        "<b>**Global Banned**</b>\n\n<b>**Berhasil**: {} Chat</b>\n<b>**Gagal**: {} Chat</b>\n<b>**User**: <a href='tg://user?id={}'>{} {}</a></b>",
-        "<b>**Global Unbanned**</b>\n\n<b>**Berhasil**: {} Chat</b>\n<b>**Gagal**: {} Chat</b>\n<b>**User**: <a href='tg://user?id={}'>{} {}</a></b>",
+        "<b>Globally Ban</b>\n\n<b>Done in {} chats</b>\n<b>error in {} chat(s)</b>\n<b>User: <a href='tg://user?id={}'>{} {}</a></b>",
+        "<b>Globally Unban</b>\n\n<b>Done in {} chats</b>\n<b>error in {} chat(s)</b>\n<b>User: <a href='tg://user?id={}'>{} {}</a></b>",
     ]
     if message.command[0] == "gban":
         async for dialog in client.get_dialogs():
@@ -42,11 +42,11 @@ async def _(client, message):
                 ChatType.CHANNEL,
             ]:
                 chat_id = dialog.chat.id
-                if user.id == 1725671304:
+                if user.id == WHITELIST:
                     return await Tm.edit(
                         "I can't Globally Ban my developer."
                     )
-                elif not user.id == 1725671304:
+                elif not user.id == WHITELIST:
                     try:
                         await client.ban_chat_member(chat_id, user.id)
                         done += 1
@@ -95,7 +95,7 @@ async def _(client, message):
                     return await Tm.edit(
                         "I can't Globally Ban my developer."
                     )
-                elif not user.id == 1725671304:
+                elif not user.id == WHITELIST:
                     try:
                         await client.ban_chat_member(chat_id, user.id)
                         done += 1
