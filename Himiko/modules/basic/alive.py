@@ -27,7 +27,7 @@ async def himiko_xnxx(client: Client, message: Message):
         himiko = await client.get_inline_bot_results(bot=bot_username, query=f"alive {id(message)}")
         await asyncio.gather(
             client.send_inline_bot_result(
-                message.chat.id, himiko.query_id, shin.results[0].id, reply_to_message_id=message.id
+                message.chat.id, himiko.query_id, himiko.results[0].id, reply_to_message_id=message.id
             )
         )
     except Exception as e:
