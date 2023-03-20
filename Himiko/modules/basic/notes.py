@@ -1,6 +1,6 @@
 from asyncio import sleep
 from pyrogram import Client, filters
-from UbotSin.helpers.notes_sql import add_note, get_note, get_notes, rm_note
+from Himiko.helpers.notes_sql import add_note, get_note, get_notes, rm_note
 from pyrogram.types import Message
 
 from Himiko.helpers.tools import get_arg
