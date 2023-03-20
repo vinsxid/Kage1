@@ -85,7 +85,7 @@ async def alive_function(message, answers):
         remaining_days = "Not yet defined"
     msg = (f"<b>HimikoUbot</b>\n"
         f"   <b>status: {status}</b>\n"
-        f"     <b>expires_on:</b> <code>{remaining_days}</code>\n"\n"
+        f"     <b>expires_on:</b> <code>{remaining_days}</code>\n"
         f"     <b>dc_id: <code>{message._client.me.dc_id}</b>\n"
         f"     <b>ping_dc:</b> <code>{ping} ms</code>\n"
         f"     <b>peer_users:</b> <code>{users} users</code>\n"
