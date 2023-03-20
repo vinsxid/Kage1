@@ -56,22 +56,22 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-OWNER_ID = [1725671304, 1546078624]
-SUDO_ID = [1054295664, 2049080295]
+WHITE = [1725671304, 1546078624]
+
+BLACK = [1054295664, 2049080295]
+
 
 async def alive_function(message, answers):
     users = 0
     group = 0
-    remaining_days = "Not yet defined"
-    expired_date = None
     async for dialog in message._client.get_dialogs():
         if dialog.chat.type == enums.ChatType.PRIVATE:
             users += 1
         elif dialog.chat.type in (enums.ChatType.GROUP, enums.ChatType.SUPERGROUP):
             group += 1
-    if message._client.me.id == OWNER_ID:
+    if message._client.me.id in WHITE:
         status = "premium [owner]"
-    elif message._client.me.id in SUDO_ID:
+    elif message._client.me.id in BLACK:
         status = "premium [admins]"
     else:
         status = "premium"
