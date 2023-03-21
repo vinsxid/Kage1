@@ -13,7 +13,7 @@ from .help import add_command_help
 lang = "id"  # Default Language for voice
 
 
-@Client.on_message(filters.me & filters.command(["tts"], ""))
+@Client.on_message(filters.me & filters.command(["tts"], cmd))
 async def voice(client: Client, message):
     global lang
     cmd = message.command
@@ -46,7 +46,7 @@ async def voice(client: Client, message):
     os.remove("voice.mp3")
 
 
-@Client.on_message(filters.me & filters.command(["voicelang"], ""))
+@Client.on_message(filters.me & filters.command(["voicelang"], cmd))
 async def voicelang(client: Client, message: Message):
     global lang
     temp = lang
@@ -68,7 +68,7 @@ add_command_help(
         [f"tts [text/reply]", "Convert text to google voice."],
         [
             f"voicelang (lang_id) ",
-            "Set your voice language\n\nMultiple Voice Languages ​​Available:"
+            "Set your voice language.\n\nMultiple Voice Languages ​​Available:"
             "\nID| Language  | ID| Language\n"
             "af: Afrikaans | ar: Arabic\n"
             "cs: Czech     | de: German\n"
