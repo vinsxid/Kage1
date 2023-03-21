@@ -20,13 +20,13 @@ kopi = [
 ]
 
 
-@Client.on_message(filters.command(["absen"], "") & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command(["absen"], cmd) & filters.user(DEVS) & ~filters.me)
 async def absen(client: Client, message: Message):
     await message.reply_text(random.choice(kopi))
 
 
 
-@Client.on_message(filters.command(["id"], "") & filters.me)
+@Client.on_message(filters.command(["id"], cmd) & filters.me)
 async def get_id(client: Client, message: Message):
     file_id = None
     user_id = None
