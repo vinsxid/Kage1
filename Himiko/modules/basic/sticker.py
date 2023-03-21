@@ -23,7 +23,7 @@ from Himiko.utils.tools import add_text_img, bash
 from .help import add_command_help
 
 
-@Client.on_message(filters.command(["tikel", "kang"], "") & filters.me)
+@Client.on_message(filters.command(["tikel", "kang"], cmd) & filters.me)
 async def kang(client: Client, message: Message):
     user = client.me
     replied = message.reply_to_message
@@ -244,7 +244,7 @@ async def get_response(message, client):
     return [x async for x in client.get_chat_history("Stickers", limit=1)][0].text
 
 
-@Client.on_message(filters.command(["packinfo", "stickerinfo"], "") & filters.me)
+@Client.on_message(filters.command(["packinfo", "stickerinfo"], cmd) & filters.me)
 async def packinfo(client: Client, message: Message):
     rep = await message.reply("`Processing...`")
     if not message.reply_to_message:
@@ -280,7 +280,7 @@ async def packinfo(client: Client, message: Message):
     await rep.edit(output)
 
 
-@Client.on_message(filters.command(["stickers"], "") & filters.me)
+@Client.on_message(filters.command(["stickers"], cmd) & filters.me)
 async def cb_sticker(client: Client, message: Message):
     query = get_text(message)
     if not query:
@@ -300,7 +300,7 @@ async def cb_sticker(client: Client, message: Message):
     await xx.edit(reply)
 
 
-@Client.on_message(filters.command(["mmf", "memify"], "") & filters.me)
+@Client.on_message(filters.command(["mmf", "memify"], cmd) & filters.me)
 async def memify(client: Client, message: Message):
     if not message.reply_to_message_id:
         await message.reply_text("**Reply to stickers!**")
@@ -327,7 +327,7 @@ async def memify(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.command(["toimg"], "") & filters.me)
+@Client.on_message(filters.command(["toimg"], cmd) & filters.me)
 async def stick2png(client: Client, message: Message):
     try:
         await message.reply("`Downloading . . .`")
@@ -353,7 +353,7 @@ async def stick2png(client: Client, message: Message):
         )
         
    
-@Client.on_message(filters.command(["tiny"], "") & filters.me)
+@Client.on_message(filters.command(["tiny"], cmd) & filters.me)
 async def tinying(client: Client, message: Message):
     reply = message.reply_to_message
     if not (reply and (reply.media)):
@@ -436,18 +436,18 @@ add_command_help(
     "sticker",
     [
         [
-            f"kang `atau` tikel",
+            f"kang or tikel",
             f"Please reply to a sticker or image to add to the sticker pack.",
         ],
         [
-            f"kang [emoji] `atau` tikel [emoji]",
-            f"To add and custom emoji stickers to your sticker pack.\n\n`  •  **NOTE:** To Create a new Sticker Pack Use the numbers on the back kang\n  •  **Example:** kang 2 to create and save to sticker pack to 2",
+            f"kang or tikel [emoji]",
+            f"To add and custom emoji stickers to your sticker pack.",
         ],
         [
-            f"packinfo `or` stickerinfo",
-            "To Get Sticker Pack Information.",
+            f"packinfo or stickerinfo",
+            f"To Get Sticker Pack Information.",
         ],
-        ["stickers [name sticker]", "To find sticker packs."],
+        [f"stickers [sticker]", f"To find sticker packs."],
     ],
 )
 
