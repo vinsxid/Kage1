@@ -155,7 +155,7 @@ add_command_help(
         ["duck", "To get Link from DuckDuckGo."],
         [
             "open",
-            "To view the contents of the file as text which is sent as a telegram message.",
+            "To view the contents of the file as text.",
         ],
     ],
 )
