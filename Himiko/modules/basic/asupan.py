@@ -11,7 +11,7 @@ from Himiko import CMD_HELP, app
 from .help import add_command_help
 
 
-@Client.on_message(filters.command(["asupan", "ptl"], "") & filters.me)
+@Client.on_message(filters.command(["asupan", "ptl"], cmd) & filters.me)
 async def asupan_cmd(client: Client, message: Message):
     Man = await edit_or_reply(message, "`Searching...`")
     await gather(
@@ -30,7 +30,7 @@ async def asupan_cmd(client: Client, message: Message):
         ),
     )
 
-@Client.on_message(filters.command(["ppanime", "anim"], "") & filters.me)
+@Client.on_message(filters.command(["ppanime", "anim"], cmd) & filters.me)
 async def ppanime(client: Client, message: Message):
     yanto = await message.reply("`Processing...`")
     message.from_user.first_name
