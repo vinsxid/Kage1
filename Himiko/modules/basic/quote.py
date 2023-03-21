@@ -5,6 +5,7 @@ from re import sub
 import requests
 from pyrogram import Client, filters
 from pyrogram.types import Message
+from config import CMD_HANDLER as cmd
 
 
 api_key = "WARYRD-YMKRHB-CZVXRU-WMVIAD-ARQ"
@@ -92,7 +93,7 @@ async def generate_sticker(messages):
         return None
 
 
-@Client.on_message(filters.me & filters.command(["qq"], ""))
+@Client.on_message(filters.me & filters.command(["qq"], cmd))
 async def quotly_handler(c, m: Message):
     cmd = m.command
     if not (r := m.reply_to_message) and not r.text:
