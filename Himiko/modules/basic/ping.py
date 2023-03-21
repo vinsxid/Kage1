@@ -6,6 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.raw import functions
 from pyrogram.types import Message
 from datetime import datetime
+from config import CMD_HANDLER as cmd
 from Himiko.helpers.adminHelpers import DEVS
 from Himiko import *
 from Himiko.utils import get_readable_time
@@ -24,7 +25,7 @@ cmds = [".", "*", "!", "?", "p"]
 @Client.on_message(
     filters.command("ping", ["c"]) & filters.user(DEVS) & ~filters.me
 )
-@Client.on_message(filters.command(["ping"], "") & filters.me)
+@Client.on_message(filters.command(["ping"], cmd) & filters.me)
 async def pingme(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
