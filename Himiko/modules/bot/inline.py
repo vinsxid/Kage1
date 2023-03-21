@@ -95,7 +95,7 @@ async def alive_function(message, answers):
                 msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
             ),
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Close", callback_data="close_help")]]
+                [[InlineKeyboardButton("Help", callback_data="helper")]]
             ),
         )
     )
