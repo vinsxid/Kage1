@@ -9,7 +9,7 @@ from config import CMD_HANDLER as cmd
 from .help import add_command_help
 
 
-@Client.on_message(filters.command(["notes"], "") & filters.me)
+@Client.on_message(filters.command(["notes"], cmd) & filters.me)
 async def list_notes(client, message):
     user_id = message.from_user.id
     notes = get_notes(str(user_id))
@@ -17,11 +17,11 @@ async def list_notes(client, message):
         return await message.reply("No such note.")
     msg = f"List saved notes:\n"
     for note in notes:
-        msg += f"- {note.keyword}\n"
+        msg += f"-{note.keyword}\n"
     await message.reply(msg)
 
 
-@Client.on_message(filters.command(["delete"], "") & filters.me)
+@Client.on_message(filters.command(["delnote"], cmd) & filters.me)
 async def remove_notes(client, message):
     notename = get_arg(message)
     user_id = message.from_user.id
@@ -33,7 +33,7 @@ async def remove_notes(client, message):
 
 cmdb = [".", "*", "!", "?", "s"]
 
-@Client.on_message(filters.command(["save"], "") & filters.me)
+@Client.on_message(filters.command(["addnote"], cmd) & filters.me)
 async def simpan_note(client, message):
     keyword = get_arg(message)
     user_id = message.from_user.id
@@ -48,11 +48,11 @@ async def simpan_note(client, message):
     )
     await sleep(1)
     add_note(str(user_id), keyword, msg_id)
-    await message.reply(f"**Saved note** {keyword}.")
+    await message.reply(f"**Saved note {keyword}.**")
 
 cmdp = [".", "*", "!", "?", "g"]
 
-@Client.on_message(filters.command(["get"], "") & filters.me)
+@Client.on_message(filters.command(["get"], cmd) & filters.me)
 async def panggil_notes(client, message):
     notename = get_arg(message)
     user_id = message.from_user.id
@@ -65,9 +65,9 @@ async def panggil_notes(client, message):
 add_command_help(
     "notes",
     [
-        [f"save [note name or reply]", "Add a notes"],
+        [f"addnote [note name or reply]", "Add a notes"],
         [f"get [note name]", "Get a notes"],
-        [f"delete [note name]", "Delete a notes"],
+        [f"delnote [note name]", "Delete a notes"],
         [f"notes", "Get all list notes"],
     ],
 )
