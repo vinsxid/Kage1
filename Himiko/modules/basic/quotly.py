@@ -10,7 +10,7 @@ from Himiko.helpers.basic import edit_or_reply
 from .help import add_command_help
 
 
-@Client.on_message(filters.me & filters.command(["q", "quotly"], ""))
+@Client.on_message(filters.me & filters.command(["q", "quotly"], cmd))
 async def _(client, message):
     if message.reply_to_message:
         await client.unblock_user("@QuotLyBot")
@@ -43,7 +43,7 @@ add_command_help(
     "quotly",
     [
         [
-            f"q/quotly <warna>",
+            f"q/quotly <integer>",
             "Make messages into stickers.",
         ],
     ],
