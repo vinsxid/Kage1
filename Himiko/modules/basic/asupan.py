@@ -53,9 +53,9 @@ async def ppanime(client: Client, message: Message):
 add_command_help(
     "asupan",
     [
-        ["asupan atau ptl",
+        ["asupan or ptl",
             "Get tiktok videos randomly"],
-        ["ppanime atau anim",
+        ["ppanime or anim",
             "Get random anime pp"],
     ],
 )
