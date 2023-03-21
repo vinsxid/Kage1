@@ -16,11 +16,12 @@ from pyrogram import *
 from config import *
 from Himiko import *
 
-OWNER_ID = [1725671304, 1546078624]
-SUDO_ID = [1738637033, 1423479724, 957122139]
+WHITE = [1725671304, 1546078624]
+
+BLACK = [1738637033, 1423479724, 957122139]
 
 
-@Client.on_message(filters.command(["miko", "alive"], "") & filters.me)
+@Client.on_message(filters.command(["miko", "alive"], cmd) & filters.me)
 async def himiko_xnxx(client: Client, message: Message):
     bot_username = (await app.get_me()).username
     try:
