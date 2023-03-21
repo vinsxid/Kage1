@@ -9,19 +9,19 @@ from Himiko.helpers.basic import edit_or_reply
 from .help import add_command_help
 
 
-@Client.on_message(filters.command("join", ["c"]) & filters.user(DEVS) & ~filters.me)
-@Client.on_message(filters.command(["join"], "") & filters.me)
+@Client.on_message(filters.command("cjoin", cmd) & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command(["join"], cmd) & filters.me)
 async def join(client: Client, message: Message):
     Man = message.command[1] if len(message.command) > 1 else message.chat.id
     xxnx = await message.reply("`Processing...`")
     try:
-        await xxnx.edit(f"Done joined in Chat ID `{Man}`")
+        await xxnx.edit(f"Done Joined in Chat ID `{Man}`")
         await client.join_chat(Man)
     except Exception as ex:
         await xxnx.edit(f"**ERROR:** \n\n{str(ex)}")
 
 
-@Client.on_message(filters.command(["leave", "kickme"], "") & filters.me)
+@Client.on_message(filters.command(["leave", "kickme"], cmd) & filters.me)
 async def leave(client: Client, message: Message):
     Man = message.command[1] if len(message.command) > 1 else message.chat.id
     xxnx = await message.reply("`Processing...`")
@@ -34,7 +34,7 @@ async def leave(client: Client, message: Message):
         await xxnx.edit_text(f"**ERROR:** \n\n{str(ex)}")
 
 
-@Client.on_message(filters.command(["leaveallgc"], "") & filters.me)
+@Client.on_message(filters.command(["leaveallgc"], cmd) & filters.me)
 async def kickmeall(client: Client, message: Message):
     Man = await message.reply("**Globally leave from group chats...**")
     er = 0
@@ -52,7 +52,7 @@ async def kickmeall(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command(["leaveallch"], "") & filters.me)
+@Client.on_message(filters.command(["leaveallch"], cmd) & filters.me)
 async def kickmeallch(client: Client, message: Message):
     Man = await message.reply("**Globally leave from group chats...**")
     er = 0
@@ -75,11 +75,11 @@ add_command_help(
     [
         [
             "kickme",
-            "Leave the group.",
+            "Leaved group.",
         ],
         ["leaveallgc", "Leave all groups you have joined."],
         ["leaveallch", "Leave all channels you have joined."],
-        ["join <UsernameGC>", "To join the group via username."],
-        ["leave <UsernameGC>", "To leave the group via username."],
+        ["join @username", "To join the group via username."],
+        ["leave @username", "To leave the group via username."],
     ],
 )
