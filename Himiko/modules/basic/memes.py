@@ -9,7 +9,7 @@ from Himiko.helpers.basic import get_text
 from .help import *
 
 
-@Client.on_message(filters.command(["trump"], "") & filters.me)
+@Client.on_message(filters.command(["trump"], cmd) & filters.me)
 async def trump_tweet(client: Client, message: Message):
     text = get_text(message)
     if not text:
@@ -24,7 +24,7 @@ async def trump_tweet(client: Client, message: Message):
     await message.delete()
 
 
-@Client.on_message(filters.command(["tweet"], "") & filters.me)
+@Client.on_message(filters.command(["tweet"], cmd) & filters.me)
 async def custom_tweet(client: Client, message: Message):
     text = get_text(message)
     input_str = get_text(message)
@@ -32,10 +32,10 @@ async def custom_tweet(client: Client, message: Message):
         if ":" in text:
             stark = input_str.split(":", 1)
         else:
-            await message.reply("**Usage Syntax :** `username:tweet-text`")
+            await message.reply("**Usage:** `username:tweet-text`")
             return
     if len(stark) != 2:
-        await message.edit("**Usage Syntax :** `username:tweet-text`")
+        await message.edit("**Usage:** `username:tweet-text`")
         return
 
     starky = stark[0]
@@ -51,7 +51,7 @@ async def custom_tweet(client: Client, message: Message):
     
     
 # credits Tomi Setiawan > @T0M1_X
-@Client.on_message(filters.command(["memes"], "") & filters.me)
+@Client.on_message(filters.command(["memes"], cmd) & filters.me)
 async def _(client, message):
     if len(message.command) < 2:
         return await message.reply("<code>memes</code> [text]")
