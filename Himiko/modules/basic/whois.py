@@ -13,7 +13,7 @@ from Himiko.utils import extract_user
 from .help import add_command_help
 
 
-@Client.on_message(filters.command(["whois", "info"], "") & filters.me)
+@Client.on_message(filters.command(["whois", "info"], cmd) & filters.me)
 async def who_is(client: Client, message: Message):
     user_id = await extract_user(message)
     ex = await message.edit_text("**Processing . . .**")
@@ -40,7 +40,7 @@ async def who_is(client: Client, message: Message):
         dc_id = f"{user.dc_id}" if user.dc_id else "-"
         common = await client.get_common_chats(user.id)
         out_str = f"""<b>**USER INFORMATION**</b>
-<b>**User ID**:</b> <code>{user.id}</code>
+ <b>**User ID**:</b> <code>{user.id}</code>
  <b>**First Name**:</b> {first_name}
  <b>**Last Name**:</b> {last_name}
  <b>**Username**:</b> {username}
