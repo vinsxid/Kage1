@@ -13,7 +13,7 @@ r = telegraph.create_account(short_name="telegram")
 auth_url = r["auth_url"]
 
 
-@Client.on_message(filters.command(["tg"], "") & filters.me)
+@Client.on_message(filters.command(["tg"], cmd) & filters.me)
 async def uptotelegraph(client: Client, message: Message):
     Himiko = await message.reply("**Processing . . .**")
     if not message.reply_to_message:
@@ -55,7 +55,7 @@ add_command_help(
     [
         [
             f"tg",
-            "Reply to Text Message or Media to upload it to the telegraph.",
+            "Reply to Media to upload it to telegraph.",
         ],
     ],
 )
