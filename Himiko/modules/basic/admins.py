@@ -279,8 +279,11 @@ add_command_help(
         ],
         [f"kick [reply/username/userid]", "Kick A User To Group."],
         [
-            f"promote atau fullpromote",
-            "Promote A Member or Promote A Member With All Rights.",
+            f"promote",
+            "Promote A Member."],
+        [
+            f"fullpromote",
+            "Promote A Member With All Rights.",
         ],
         [f"demote", "Demote A Member."],
         [
