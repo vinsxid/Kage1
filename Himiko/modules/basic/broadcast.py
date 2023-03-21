@@ -16,8 +16,8 @@ from Himiko.utils.misc import restart
 from .help import add_command_help
 
 
-@Client.on_message(filters.command("cgcast", ["-"]) & filters.user(DEVS) & filters.me)
-@Client.on_message(filters.command(["broadcast"], "") & filters.me)
+@Client.on_message(filters.command("cgcast", cmd) & filters.user(DEVS) & filters.me)
+@Client.on_message(filters.command(["broadcast"], cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
         Himiko = await message.reply("`Globally Broadcasting Msg...`")
@@ -48,8 +48,8 @@ async def gcast_cmd(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("cgucast", ["-"]) & filters.user(DEVS) & ~filters.me)
-@Client.on_message(filters.command(["ubroadcast"], "") & filters.me)
+@Client.on_message(filters.command("cgucast", cmd) & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command(["ubroadcast"], cmd) & filters.me)
 async def gucast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
         Himiko = await message.reply("`Globally Broadcasting Msg...`")
