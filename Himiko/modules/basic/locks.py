@@ -72,7 +72,7 @@ async def tg_lock(
     await message.edit_text(("Locked." if lock else "Unlocked."))
 
 
-@Client.on_message(filters.command(["lock", "unlock"], "") & filters.me)
+@Client.on_message(filters.command(["lock", "unlock"], cmd) & filters.me)
 async def locks_func(client: Client, message: Message):
     if len(message.command) != 2:
         return await message.edit_text(incorrect_parameters)
@@ -96,7 +96,7 @@ async def locks_func(client: Client, message: Message):
         )
     elif parameter == "all" and state == "lock":
         await client.set_chat_permissions(chat_id, ChatPermissions())
-        await message.edit_text(f"🔒 Locked all permission in {message.chat.title}")
+        await message.edit_text(f"🔒 Locked everything in {message.chat.title}")
 
     elif parameter == "all" and state == "unlock":
         await client.set_chat_permissions(
@@ -112,10 +112,10 @@ async def locks_func(client: Client, message: Message):
                 can_pin_messages=False,
             ),
         )
-        await message.edit(f"🔓 Unlocked all permission in {message.chat.title}")
+        await message.edit(f"🔓 Unlocked everything in {message.chat.title}")
 
 
-@Client.on_message(filters.command(["locks"], "") & filters.me)
+@Client.on_message(filters.command(["locks"], cmd) & filters.me)
 async def locktypes(client: Client, message: Message):
     permissions = await current_chat_permissions(client, message.chat.id)
 
