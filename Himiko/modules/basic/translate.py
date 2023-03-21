@@ -16,7 +16,7 @@ from Himiko import *
 from Himiko.helpers.tools import get_arg
 
 
-@Client.on_message(filters.command(["tr", "translate"], "") & filters.me)
+@Client.on_message(filters.command(["tr", "translate"], cmd) & filters.me)
 async def pytrans_tr(_, message: Message):
   tr_msg = await message.reply("**Processing...**")
   r_msg = message.reply_to_message
@@ -78,7 +78,7 @@ add_command_help(
     [
         [
             "tr <language> <text/reply>",
-            "Translates text to the set language. (Indonesian language code default)",
+            "Translates text to the set language code.",
         ],
     ],
 )
