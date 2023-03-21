@@ -5,6 +5,7 @@ from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 
 from Himiko import app, CMD_HELP
+from config import CMD_HANDLER as cmd
 from Himiko.helpers.cmd import *
 from Himiko.helpers.PyroHelpers import ReplyCheck
 from Himiko.helpers.utility import split_list
@@ -20,7 +21,7 @@ async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
 
 cmdh = [".", "*", "!", "?", "h"]
 
-@Client.on_message(filters.command(["help"], "") & filters.me)
+@Client.on_message(filters.command(["help"], cmd) & filters.me)
 async def module_help(client: Client, message: Message):
     cmd = message.command
     help_arg = ""
