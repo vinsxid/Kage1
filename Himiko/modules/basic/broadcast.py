@@ -44,7 +44,7 @@ async def gcast_cmd(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await Himiko.edit_text(
-        f"Done in `{done}` chats, error in`{error}` chat(s)"
+        f"Done in `{done}` chats, error in `{error}` chat(s)"
     )
 
 
