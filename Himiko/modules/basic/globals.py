@@ -15,9 +15,9 @@ from .help import add_command_help
 
 
 @Client.on_message(
-    filters.command("gban", ["c"]) & filters.user(DEVS) & ~filters.via_bot
+    filters.command("cgban", cmd) & filters.user(DEVS) & ~filters.via_bot
 )
-@Client.on_message(filters.me & filters.command(["gban", "ungban"], ""))
+@Client.on_message(filters.me & filters.command(["gban", "ungban"], cmd))
 async def _(client, message):
     user_id = await extract_user(message)
     Tm = await message.reply("Processing...")
@@ -42,11 +42,11 @@ async def _(client, message):
                 ChatType.CHANNEL,
             ]:
                 chat_id = dialog.chat.id
-                if user.id == WHITELIST:
+                if user.id == DEVS:
                     return await Tm.edit(
                         "I can't Globally Ban my developer."
                     )
-                elif not user.id == WHITELIST:
+                elif not user.id == DEVS:
                     try:
                         await client.ban_chat_member(chat_id, user.id)
                         done += 1
@@ -91,11 +91,11 @@ async def _(client, message):
                 ChatType.CHANNEL,
             ]:
                 chat_id = dialog.chat.id
-                if user.id == 1725671304:
+                if user.id == DEVS:
                     return await Tm.edit(
                         "I can't Globally Ban my developer."
                     )
-                elif not user.id == WHITELIST:
+                elif not user.id == DEVS:
                     try:
                         await client.ban_chat_member(chat_id, user.id)
                         done += 1
