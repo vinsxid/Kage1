@@ -9,7 +9,7 @@ from Himiko.helpers.tools import run_cmd
 from Himiko.modules.basic import add_command_help
 
 
-@Client.on_message(filters.command(["toanime"], "") & filters.me)
+@Client.on_message(filters.command(["toanime"], cmd) & filters.me)
 async def convert_image(client: Client, message: Message):
     if not message.reply_to_message:
         return await message.reply("`Reply to photo to turn into anime.`")
@@ -34,7 +34,7 @@ async def convert_image(client: Client, message: Message):
         user_info = await client.resolve_peer(bot)
         return await client.invoke(DeleteHistory(peer=user_info, max_id=0, revoke=True))
 
-@Client.on_message(filters.command(["toaudio"], "") & filters.me)
+@Client.on_message(filters.command(["toaudio"], cmd) & filters.me)
 async def extract_all_aud(client: Client, message: Message):
     replied_msg = message.reply_to_message
     geez = await message.reply("`Downloading...`")
@@ -63,7 +63,7 @@ async def extract_all_aud(client: Client, message: Message):
         await geez.edit(f"**Error:** `{e}`")
        
           
-@Client.on_message(filters.command(["togif"], "") & filters.me)
+@Client.on_message(filters.command(["togif"], cmd) & filters.me)
 async def togif(client: Client, message: Message):
     TM = await message.reply("<b>Processing...</b>")
     if not message.reply_to_message:
