@@ -21,7 +21,7 @@ async def make_carbon(code):
     return image
 
 
-@Client.on_message(filters.command(["carbon"], "") & filters.me)
+@Client.on_message(filters.command(["carbon"], cmd) & filters.me)
 async def carbon_func(client: Client, message: Message):
     text = (
         message.text.split(None, 1)[1]
@@ -43,7 +43,7 @@ async def carbon_func(client: Client, message: Message):
         client.send_photo(
             message.chat.id,
             carbon,
-            caption=f"**Carbonised by** {client.me.mention}",
+            caption=f"**Carbonised By** {client.me.mention}",
             reply_to_message_id=ReplyCheck(message),
         ),
     )
