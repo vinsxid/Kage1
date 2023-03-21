@@ -80,7 +80,7 @@ async def alive_function(message, answers):
     ping = (datetime.now() - start).microseconds / 1000
     uptime = await get_readable_time((time.time() - StartTime))
     msg = (f"<b>HimikoUbot</b>\n"
-        f"   <b>status:</b> <i>{status}</i>\n"
+        f"   <b>status: {status}</b>\n"
         f"     <b>dc_id: <code>{message._client.me.dc_id}</b>\n"
         f"     <b>ping_dc:</b> <code>{ping} ms</code>\n"
         f"     <b>peer_users:</b> <code>{users} users</code>\n"
@@ -95,7 +95,7 @@ async def alive_function(message, answers):
                 msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
             ),
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Close", callback_data="close")]]
+                [[InlineKeyboardButton("Close", callback_data="close_help")]]
             ),
         )
     )
