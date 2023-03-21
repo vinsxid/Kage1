@@ -82,7 +82,7 @@ async def member_unban(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["cpin", "cunpin"], "") & filters.user(DEVS) & ~filters.me
+    filters.command(["cpin", "cunpin"], "-") & filters.user(DEVS) & ~filters.me
 )
 @Client.on_message(filters.command(["pin", "unpin"], cmd) & filters.me)
 async def pin_message(client: Client, message):
@@ -153,7 +153,7 @@ async def unmute(client: Client, message: Message):
 cmda = [".", "*", "!", "?", "k"]
 
 @Client.on_message(
-    filters.command(["ckick"], "") & filters.user(DEVS) & ~filters.me
+    filters.command(["ckick"], "-") & filters.user(DEVS) & ~filters.me
 )
 @Client.on_message(filters.command(["kick", "ick"], cmd) & filters.me)
 async def kick_user(client: Client, message: Message):
