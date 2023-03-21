@@ -17,7 +17,7 @@ from Himiko.utils import s_paste
 from .help import *
 
 
-@Client.on_message(filters.command(["limited"], "") & filters.me)
+@Client.on_message(filters.command(["limited"], cmd) & filters.me)
 async def _(client, message):
     await client.unblock_user("SpamBot")
     bot_info = await client.resolve_peer("SpamBot")
@@ -37,7 +37,7 @@ async def _(client, message):
 
 
 
-@Client.on_message(filters.command(["webshot", "ss"], "") & filters.me)
+@Client.on_message(filters.command(["webshot", "ss"], cmd) & filters.me)
 async def webshot(client: Client, message: Message):
     Man = await message.reply("`Processing...`")
     try:
@@ -65,7 +65,7 @@ async def webshot(client: Client, message: Message):
         )
 
 
-@Client.on_message(filters.command(["type"], "") & filters.me)
+@Client.on_message(filters.command(["type"], cmd) & filters.me)
 async def types(client: Client, message: Message):
     orig_text = message.text.split(prefix + "type ", maxsplit=1)[1]
     text = orig_text
@@ -80,7 +80,7 @@ async def types(client: Client, message: Message):
         await asyncio.sleep(0.10)
 
 
-@Client.on_message(filters.command(["duck"], "") & filters.me)
+@Client.on_message(filters.command(["duck"], cmd) & filters.me)
 async def duckgo(client: Client, message: Message):
     input_str = " ".join(message.command[1:])
     Man = await message.reply(message, "`Processing...`")
@@ -94,7 +94,7 @@ async def duckgo(client: Client, message: Message):
         await Man.edit_text("something is wrong. please try again later.")
 
 
-@Client.on_message(filters.command(["open"], "") & filters.me)
+@Client.on_message(filters.command(["open"], cmd) & filters.me)
 async def open_file(client: Client, message: Message):
     xd = await message.reply("`Reading File!`")
     f = await client.download_media(message.reply)
@@ -113,11 +113,11 @@ async def open_file(client: Client, message: Message):
         else:
             await xd.edit(f"**Output:**\n```{_error_}```")
     else:
-        await edit_or_reply(m, "Balas ke File untuk membukanya!")
+        await edit_or_reply(m, "Reply to File to open it.")
         os.remove(f)
 
 
-@Client.on_message(filters.command(["ig", "ytb", "twitter", "fb", "tt"], "") & filters.me)
+@Client.on_message(filters.command(["ig", "ytb", "twitter", "fb", "tt"], cmd) & filters.me)
 async def sosmed(client: Client, message: Message):
     Man = await message.reply("**Processing . . .**")
     link = get_arg(message)
@@ -140,7 +140,7 @@ async def sosmed(client: Client, message: Message):
             client.send_video(
                 message.chat.id,
                 sosmed.video.file_id,
-                caption=f"**Upload by:** {client.me.mention}",
+                caption=f"**Upload By:** {client.me.mention}",
                 reply_to_message_id=ReplyCheck(message),
             ),
         )
