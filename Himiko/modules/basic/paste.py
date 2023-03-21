@@ -14,7 +14,7 @@ from .help import add_command_help
 pattern = re.compile(r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$")
 
 
-@Client.on_message(filters.command(["paste"], "") & filters.me)
+@Client.on_message(filters.command(["paste"], cmd) & filters.me)
 async def paste_func(client: Client, message: Message):
     if not message.reply_to_message:
         return await message.reply(f"Reply To A Message.")
