@@ -457,7 +457,7 @@ add_command_help(
     [
         [
             "mmf [top text] ; [bottom text]",
-            "Reply to message Sticker or photo will be changed to the specified meme text sticker.",
+            "Reply to message Sticker or photo to memify.",
         ],
     ],
 )
