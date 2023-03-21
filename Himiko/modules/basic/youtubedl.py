@@ -65,7 +65,7 @@ async def downloadsong(m, message, vid_id):
     if os.path.exists(thumbloc):
         os.remove(thumbloc)
    except Exception as e:
-       await m.edit(f"There is an error. ⚠️ \nYou can also get help from @d4msy or @HimikoSupportChat.__\n\n{str(e)}")
+       await m.edit(f"There is an error. ⚠️ \nYou can also get help from @d4msy or @HimikoSupportChat.\n\n{str(e)}")
 
 async def downlodvideo(m, message, vid_id):
    try: 
@@ -85,10 +85,10 @@ async def downlodvideo(m, message, vid_id):
     if os.path.exists(video):
             os.remove(video)
    except Exception as e:
-       await m.edit(f"`There is an error. ⚠️ \nYou can also get help from @d4msy or @HimikoSupportChat.__\n\n{str(e)}`")
+       await m.edit(f"`There is an error. ⚠️ \nYou can also get help from @d4msy or @HimikoSupportChat.\n\n{str(e)}`")
 
 
-@Client.on_message(filters.command(["song"], "") & filters.me)
+@Client.on_message(filters.command(["song"], cmd) & filters.me)
 async def yt_audio(client, message):
     if len(message.command) < 2:
         return await message.reply_text(
@@ -130,7 +130,7 @@ async def yt_audio(client, message):
         thumb=thumbnail,
         file_name=title,
         duration=duration,
-        caption="<b>Song Informasi {}</b>\n\n<b>•Name:</b> {}\n<b>• Duration:</b> {}\n<b>• Views:</b> {}\n<b>• Channel:</b> {}\n<b>• Linked:</b> <a href={}>Youtube</a>\n\n<b>• Powered By:</b> {}".format(
+        caption="<b>Song Informasi {}</b>\n\n<b>• Names:</b> {}\n<b>• Duration:</b> {}\n<b>• Views:</b> {}\n<b>• Channel:</b> {}\n<b>• Linked:</b> <a href={}>Youtube</a>\n\n<b>• Powered By:</b> {}".format(
             "Audio",
             title,
             duration,
@@ -145,7 +145,7 @@ async def yt_audio(client, message):
         if files and os.path.exists(files):
             os.remove(files)
 
-@Client.on_message(filters.command(["vid", "vsong"], "") & filters.me)
+@Client.on_message(filters.command(["vid", "vsong"], cmd) & filters.me)
 async def yt_video(client, message):
     if len(message.command) < 2:
         return await message.reply_text(
@@ -188,7 +188,7 @@ async def yt_video(client, message):
         file_name=title,
         duration=duration,
         supports_streaming=True,
-        caption="<b>Video Informasi {}</b>\n\n<b>• Name:</b> {}\n<b>• Duration:</b> {}\n<b>• Views:</b> {}\n<b>• Channel:</b> {}\n<b>• Linked:</b> <a href={}>Youtube</a>\n\n<b>• Powered By:</b> {}".format(
+        caption="<b>Video Informasi {}</b>\n\n<b>• Names:</b> {}\n<b>• Duration:</b> {}\n<b>• Views:</b> {}\n<b>• Channel:</b> {}\n<b>• Linked:</b> <a href={}>Youtube</a>\n\n<b>• Powered By:</b> {}".format(
             "video",
             title,
             duration,
