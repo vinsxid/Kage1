@@ -11,12 +11,12 @@ from Himiko.helpers.basic import edit_or_reply
 from .help import *
 
 
-@Client.on_message(filters.me & filters.command(["invite"], ""))
+@Client.on_message(filters.me & filters.command(["invite"], cmd))
 async def inviteee(client: Client, message: Message):
     mg = await edit_or_reply(message, "**Adding Users...**")
     user_s_to_add = message.text.split(" ", 1)[1]
     if not user_s_to_add:
-        await mg.reply("`Give Me Users To Add! Check Help Menu For More Info!`")
+        await mg.reply("`Give Me Users To Add.`")
         return
     user_list = user_s_to_add.split(" ")
     try:
@@ -24,10 +24,10 @@ async def inviteee(client: Client, message: Message):
     except BaseException as e:
         await mg.edit(f"`Unable To Add Users! \nTraceBack : {e}`")
         return
-    await mg.edit(f"`Sucessfully Added {len(user_list)} To This Group / Channel!`")
+    await mg.edit(f"`Sucessfully Added {len(user_list)} To This Group/Channel.`")
 
 
-@Client.on_message(filters.command(["inviteall"], "") & filters.me)
+@Client.on_message(filters.command(["inviteall"], cmd) & filters.me)
 async def inv(client: Client, message: Message):
     Man = await message.reply("`Processing...`")
     text = message.text.split(" ", 1)
@@ -52,7 +52,7 @@ async def inv(client: Client, message: Message):
                 await mg.delete()
 
 
-@Client.on_message(filters.command(["invitelink"], "") & filters.me)
+@Client.on_message(filters.command(["invitelink"], cmd) & filters.me)
 async def invite_link(client: Client, message: Message):
     Man = await message.reply("`Processing...`")
     if message.chat.type in [ChatType.GROUP, ChatType.SUPERGROUP]:
