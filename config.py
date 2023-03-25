@@ -25,13 +25,13 @@ BLACKLIST_GCAST = list(
         ).split(),
     )
 )
-BOTLOG_CHATID = int(getenv("BOTLOG_CHATID") or 0)
+BOTLOG_CHATID = int(getenv("BOTLOG_CHATID", "-1001599474353"))
 BOT_VER = "2.1.5"
 BRANCH = getenv("BRANCH", "master") #don't change
 CMD_HANDLER = [".", "?", "!", "(", "-"]
 CMD_HNDLR = [".", "?", "!", "(", "-"]
 OWNER_ID = getenv("OWNER_ID", "1725671304")
-BOT_TOKEN = getenv("BOT_TOKEN", "6086469052:AAGKpWI9L_srK9qOnIXAe5v2Bp7LkFrDkig")
+BOT_TOKEN = getenv("BOT_TOKEN", "6138886907:AAHgrhiYq_xJYCE9c3C8baeASq3fuOSd-cU")
 OPENAI_API_KEY = getenv("OPENAI_API_KEY", "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")
 CHANNEL = getenv("CHANNEL", "diarydam")
 DB_URL = getenv("DATABASE_URL", "postgres://mvedakyh:dIjsnpYu5cWqD_4Bkyjqi2r-MZTf4FQh@tyke.db.elephantsql.com/mvedakyh")
