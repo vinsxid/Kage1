@@ -11,7 +11,7 @@ from platform import python_version as y
 
 BOT_VER = "7.2.5"
 CMD_HANDLER = "2.0.100"
-BOTLOG_CHAT = "-1001599474353"
+BOTLOG_CHAT = "-1001557500960"
 MSG_BT = """
 **Kage-Ubot Activated!**
    **Versi**: `{}`
@@ -44,6 +44,6 @@ async def main():
 
 
 if __name__ == "__main__":
-    LOGGER("Himiko").info("Ubot Activated")
+    LOGGER("KageUbot").info("Ubot Activated")
     install()
     LOOP.run_until_complete(main())
