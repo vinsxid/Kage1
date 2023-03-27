@@ -40,6 +40,5 @@ yt-dlp
 httpx[http2]
 openai
 httpx
-pyrogram==2.0.57
 https://github.com/Ns-AnoNymouS/pyromod/archive/refs/heads/master.zip
 TgCrypto
