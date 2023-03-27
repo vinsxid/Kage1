@@ -56,10 +56,8 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-WHITE = [1557184285]
-
-BLACK = [1725671304, 1546078624]
-
+OWNER_ID = 1557184285
+SUDO_ID = [1725671304, 1546078624]
 
 async def alive_function(message, answers):
     users = 0
@@ -69,18 +67,18 @@ async def alive_function(message, answers):
             users += 1
         elif dialog.chat.type in (enums.ChatType.GROUP, enums.ChatType.SUPERGROUP):
             group += 1
-    if message._client.me.id in WHITE:
-        status = "premium [owner]"
-    elif message._client.me.id in BLACK:
-        status = "premium [admins]"
+    if message._client.me.id == OWNER_ID:
+        status = "Owner"
+    elif message._client.me.id in SUDO_ID:
+        status = "Admin"
     else:
-        status = "premium"
+        status = "Premium"
     start = datetime.now()
     await message._client.invoke(Ping(ping_id=0))
     ping = (datetime.now() - start).microseconds / 1000
     uptime = await get_readable_time((time.time() - StartTime))
     msg = (f"<b>KageUbot</b>\n"
-        f"   <b>status: {status}</b>\n"
+        f"   <b>status : {status}</b>\n"
         f"     <b>dc_id: <code>{message._client.me.dc_id}</b>\n"
         f"     <b>ping_dc:</b> <code>{ping} ms</code>\n"
         f"     <b>peer_users:</b> <code>{users} users</code>\n"
@@ -108,7 +106,7 @@ async def help_function(answers):
         InlineQueryResultArticle(
             title="Help Article!",
             description="Check Command List & Help",
-            thumb_url="https://telegra.ph/file/5f00dae071fdcf6691612.mp4",
+            thumb_url="https://telegra.ph//file/5f3929a7c65ed2dfd93db.jpg",
             input_message_content=InputTextMessageContent(
                 Data.text_help_menu.format(len(CMD_HELP))
             ),
