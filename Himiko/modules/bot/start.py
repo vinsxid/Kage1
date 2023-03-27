@@ -18,8 +18,8 @@ from config import *
 from Himiko import ids
 
 ADMIN1 = [1725671304]
-ADMIN2 = [2049080295]
-APP_VERSION = "7.2.0"
+ADMIN2 = [1557184285]
+APP_VERSION = "7.0.0"
 
 
 @app.on_message(filters.command(["alive"]))
@@ -27,7 +27,7 @@ async def module_help(client: Client, message: Message):
     served_users = len(ids)
     await message.reply_text(
       f"""
- **HimikoUbot**
+ **Kage-Ubot**
    **Status** : **ROBOT**
      **Users** : `{served_users}`
      **Versi** : `{APP_VERSION}`
@@ -37,8 +37,8 @@ async def module_help(client: Client, message: Message):
     reply_markup=InlineKeyboardMarkup(
       [
         [
-            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ​", url=f"https://t.me/HimikoSupportChat"),
-            InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/diarydam"),
+            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ​", url=f"https://t.me/userbotkage"),
+            InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/kagestore69"),
         ],
       ]
       ),
@@ -50,6 +50,6 @@ async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""<b>👋 **Hallo {message.from_user.first_name}** \n
 💭 **Is there anything I can help? **
-💡 **If you want to make a bot\nYou can Contact @d4msy.**
+💡 **If you want to make a bot\nYou can Contact @KageBunshiiin.**
 </b>""",
     )
