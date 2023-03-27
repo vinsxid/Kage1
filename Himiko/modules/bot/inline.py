@@ -56,9 +56,7 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-WHITE = [1725671304, 1546078624]
-
-BLACK = [1054295664, 2049080295]
+WHITE = [1725671304, 1546078624, 1557184285]
 
 
 async def alive_function(message, answers):
@@ -79,13 +77,13 @@ async def alive_function(message, answers):
     await message._client.invoke(Ping(ping_id=0))
     ping = (datetime.now() - start).microseconds / 1000
     uptime = await get_readable_time((time.time() - StartTime))
-    msg = (f"<b>HimikoUbot</b>\n"
+    msg = (f"<b>Kage-Ubot</b>\n"
         f"   <b>status: {status}</b>\n"
         f"     <b>dc_id: <code>{message._client.me.dc_id}</b>\n"
         f"     <b>ping_dc:</b> <code>{ping} ms</code>\n"
         f"     <b>peer_users:</b> <code>{users} users</code>\n"
         f"     <b>peer_group:</b> <code>{group} group</code>\n"
-        f"     <b>himiko_uptime:</b> <code>{uptime}</code>\n")
+        f"     <b>kage_uptime:</b> <code>{uptime}</code>\n")
 
     answers.append(
         InlineQueryResultArticle(
