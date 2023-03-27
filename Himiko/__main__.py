@@ -13,7 +13,7 @@ BOT_VER = "7.2.5"
 CMD_HANDLER = "2.0.100"
 BOTLOG_CHAT = "-1001599474353"
 MSG_BT = """
-**Himiko-Ubot Activated!**
+**Kage-Ubot Activated!**
    **Versi**: `{}`
    **Python**: `{}`
    **Pyrogram**: `{}`
@@ -44,6 +44,6 @@ async def main():
 
 
 if __name__ == "__main__":
-    LOGGER("Himiko").info("Himiko-Ubot Activated")
+    LOGGER("Himiko").info("Ubot Activated")
     install()
     LOOP.run_until_complete(main())
