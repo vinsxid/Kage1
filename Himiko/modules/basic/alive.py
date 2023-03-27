@@ -22,13 +22,13 @@ BLACK = [1725671304, 1546078624]
 
 
 @Client.on_message(filters.command(["alive"], cmd) & filters.me)
-async def himiko_xnxx(client: Client, message: Message):
+async def dam_xnxx(client: Client, message: Message):
     bot_username = (await app.get_me()).username
     try:
-        himiko = await client.get_inline_bot_results(bot=bot_username, query=f"alive {id(message)}")
+        dam = await client.get_inline_bot_results(bot=bot_username, query=f"alive {id(message)}")
         await asyncio.gather(
             client.send_inline_bot_result(
-                message.chat.id, himiko.query_id, himiko.results[0].id, reply_to_message_id=message.id
+                message.chat.id, dam.query_id, dam.results[0].id, reply_to_message_id=message.id
             )
         )
     except Exception as e:
