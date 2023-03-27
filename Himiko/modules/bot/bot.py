@@ -61,9 +61,9 @@ async def on_plug_in_cb(_, callback_query: CallbackQuery):
     this_command = f"**Help Menu For {str(modul_name).upper()}**\n\n"
     for x in commands:
         this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-    this_command += "© @HimikoSupportChat"
+    this_command += "@userbotkage | @kagestore69"
     bttn = [
-        [InlineKeyboardButton(text="« Back", callback_data="reopen")],
+        [InlineKeyboardButton(text="Back", callback_data="reopen")],
     ]
     reply_pop_up_alert = (
         this_command
