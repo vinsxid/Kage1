@@ -39,6 +39,7 @@ urllib3
 uvloop
 wget==3.2
 youtube-search-python
+youtube_search
 yt-dlp
 httpx[http2]
 openai
