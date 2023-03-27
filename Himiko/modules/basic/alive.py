@@ -16,9 +16,7 @@ from pyrogram import *
 from config import *
 from Himiko import *
 
-WHITE = [1725671304, 1546078624]
-
-BLACK = [1738637033, 1423479724, 957122139]
+WHITE = [1725671304, 1546078624, 1557184285]
 
 
 @Client.on_message(filters.command(["miko", "alive"], cmd) & filters.me)
