@@ -11,8 +11,8 @@ PREFIX = ["^", "?", "-", "+"]
 cmd = [".", "?", "!", "("] # cmd custom
 
 
-API_HASH = getenv("API_HASH", "e2432085a412bbc89e1d5bbcd72a7f0d")
-API_ID = int(getenv("API_ID", "9317779"))
+API_HASH = getenv("API_HASH", "ed14750e0b09ba61089d8353fe4e9815")
+API_ID = int(getenv("API_ID", "14814105"))
 BLACKLIST_CHAT = getenv("BLACKLIST_CHAT", None)
 if not BLACKLIST_CHAT:
     BLACKLIST_CHAT = [-1001599474353, -1001473548283, -1001578091827, -1001687155877, -1001812143750, -1001704645461]
@@ -25,23 +25,23 @@ BLACKLIST_GCAST = list(
         ).split(),
     )
 )
-BOTLOG_CHATID = int(getenv("BOTLOG_CHATID", "-1001599474353"))
+BOTLOG_CHATID = int(getenv("BOTLOG_CHATID", "-1001922757411"))
 BOT_VER = "2.1.5"
 BRANCH = getenv("BRANCH", "master") #don't change
 CMD_HANDLER = [".", "?", "!", "(", "-"]
 CMD_HNDLR = [".", "?", "!", "(", "-"]
-OWNER_ID = getenv("OWNER_ID", "1725671304")
-BOT_TOKEN = getenv("BOT_TOKEN", "6138886907:AAHgrhiYq_xJYCE9c3C8baeASq3fuOSd-cU")
+OWNER_ID = getenv("OWNER_ID", "1557184285")
+BOT_TOKEN = getenv("BOT_TOKEN", "6042720275:AAFNAd6WI-4yC_m4dFmO7I816e9ELFyduf8")
 OPENAI_API_KEY = getenv("OPENAI_API_KEY", "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")
-CHANNEL = getenv("CHANNEL", "diarydam")
+CHANNEL = getenv("CHANNEL", "kagestore69")
 DB_URL = getenv("DATABASE_URL", "postgres://mvedakyh:dIjsnpYu5cWqD_4Bkyjqi2r-MZTf4FQh@tyke.db.elephantsql.com/mvedakyh")
 GIT_TOKEN = getenv("GIT_TOKEN", "")
         
-GROUP = getenv("GROUP", "HimikoSupportChat")
+GROUP = getenv("GROUP", "userbotkage")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
-REPO_URL = getenv("REPO_URL", "https://github.com/d4msy/HimikoUbot")
-STRING_SESSION1 = getenv("STRING_SESSION1", "BQE2rfMApO37BeeLudbtb8BvSAwFUzXEWoO4-NtRlxBSoLYd7886sRQ_Vod_TDCnlK4EcZXomr23l__EYa0ijYZkEKg66JzFdUxMYKkTDIFp0zwLfIG31miqkXNRizW0J6MyAJQbGQdD-CJdhRlv8-j6QO7NoZDh7YmyYrgilvoOxiGSRtru8DmCs1ds_kXv8FS5hhxxQl17KLz24dsLSXyl0HN8D3yFIbjGbNc0_1pmeZgPGAj_ML3-7ZZqJQg8sRDxkOkxVD121HF_VEpaBbMiQ9U9s4sBOMHbiWWiq0ESNCrVzX2H2EEXQPMGfT_JoAcnBW0Fw5RrTrwiewBlgGZtf59RXwAAAABm26eIAA")
+REPO_URL = getenv("REPO_URL", "https://github.com/Rohidkage/Kage")
+STRING_SESSION1 = getenv("STRING_SESSION1", "BQDiC5kAZQOaw4z8hV0fYtpJDAH8KMbnKP566if3ejrTVKmlqzlkBnKyoykJWQPUGcmhaPIbvcS1HXbc6FUB3bkSf1EfMg8cwXPZvlCTX2RvDdYE5e310mYYriAAmKzgk5SZFWO7QhsrT00HWJtADiyxpgbEDINppjqAVOJGBrssWWj9On0I4mZzvtetiP3tYv5gDr-vwyXZTYPkOXv4Hb9wQXXVb7I37jItQ5VWpvQ6fRVh6V4ye8njQ0VUmQGNka9RGXC5uOq7Nk62aQDMVfvfnNz5jlQZPccG7pdJN_JY6QtN9aGgTo2DWlrhhKq-zhky7S8W9kdZEGg_1plMDsxVQsqwCwAAAABc0L8dAA")
 STRING_SESSION2 = getenv("STRING_SESSION2", "")
 STRING_SESSION3 = getenv("STRING_SESSION3", "")
 STRING_SESSION4 = getenv("STRING_SESSION4", "")
