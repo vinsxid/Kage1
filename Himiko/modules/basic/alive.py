@@ -16,10 +16,12 @@ from pyrogram import *
 from config import *
 from Himiko import *
 
-WHITE = [1725671304, 1546078624, 1557184285]
+WHITE = [1557184285]
+
+BLACK = [1725671304, 1546078624]
 
 
-@Client.on_message(filters.command(["miko", "alive"], cmd) & filters.me)
+@Client.on_message(filters.command(["alive"], cmd) & filters.me)
 async def himiko_xnxx(client: Client, message: Message):
     bot_username = (await app.get_me()).username
     try:
