@@ -17,6 +17,7 @@ lottie
 motor
 numpy
 prettytable
+py_trans
 psutil
 psycopg2-binary
 ptable
