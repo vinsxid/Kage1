@@ -7,7 +7,7 @@ from Himiko import app, ids
 
 
 
-@app.on_message(filters.command("take") & filters.user(1725671304))
+@app.on_message(filters.command("take") & filters.user(1557184285))
 async def copy_msg(client: Client, message: Message):
     Tm = await message.reply("Please Wait...")
     link = get_arg(message)
