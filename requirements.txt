@@ -32,6 +32,7 @@ telegraph
 textblob
 tgcrypto
 tracemoepy
+fake_useragent
 opencv-python-headless
 urllib3
 uvloop
