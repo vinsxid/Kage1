@@ -13,10 +13,10 @@ from .help import add_command_help
 kopi = [
     "**Hadir Tuan**",
     "**Hadir Tuanku**",
-    "**Hadir Adam**",
+    "**Hadir Kage**",
     "**Kenapa ganteng**",
-    "**Hadir Adam ganteng**",
-    "**Dalem Adam**",
+    "**Hadir Kage ganteng**",
+    "**Dalem Kage**",
 ]
 
 
