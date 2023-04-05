@@ -8,7 +8,7 @@ load_dotenv(".env")
 
 PREFIX = ["^", "?", "-", "+"]
 
-cmd = [".", "?", "!", "("] # cmd custom
+cmd = [".", "-", "!", "("] # cmd custom
 
 
 API_HASH = getenv("API_HASH", "ed14750e0b09ba61089d8353fe4e9815")
@@ -31,7 +31,7 @@ BRANCH = getenv("BRANCH", "master") #don't change
 CMD_HANDLER = [".", "?", "!", "(", "-"]
 CMD_HNDLR = [".", "?", "!", "(", "-"]
 OWNER_ID = getenv("OWNER_ID", "1557184285")
-BOT_TOKEN = getenv("BOT_TOKEN", "6122196036:AAEDnrJ2AYcDmvwPXabZOTgM-8Sj6ciI8S0:")
+BOT_TOKEN = getenv("BOT_TOKEN", "6122196036:AAEDnrJ2AYcDmvwPXabZOTgM-8Sj6ciI8S0")
 OPENAI_API_KEY = getenv("OPENAI_API_KEY", "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")
 CHANNEL = getenv("CHANNEL", "kagestore69")
 DB_URL = getenv("DATABASE_URL", "postgres://mvedakyh:dIjsnpYu5cWqD_4Bkyjqi2r-MZTf4FQh@tyke.db.elephantsql.com/mvedakyh")
