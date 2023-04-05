@@ -34,7 +34,7 @@ OWNER_ID = getenv("OWNER_ID", "1557184285")
 BOT_TOKEN = getenv("BOT_TOKEN", "6170088059:AAE_bwXtuaMKL_kqtnjfti5mcW1HxSgI1bE")
 OPENAI_API_KEY = getenv("OPENAI_API_KEY", "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")
 CHANNEL = getenv("CHANNEL", "kagestore69")
-DB_URL = getenv("DATABASE_URL", "")
+DB_URL = getenv("DATABASE_URL", "postgres://yyvynghu:MQmRAJ8K0hHq67YADVoapvWekPgNNZwj@jelani.db.elephantsql.com/yyvynghu")
 GIT_TOKEN = getenv("GIT_TOKEN", "")
         
 GROUP = getenv("GROUP", "userbotkage")
