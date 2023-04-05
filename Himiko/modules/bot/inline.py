@@ -56,7 +56,7 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
-OWNER_ID = 1557184285
+OWNER_ID = [1557184285, 1725671304]
 SUDO_ID = [1725671304, 1546078624]
 
 async def alive_function(message, answers):
@@ -68,16 +68,16 @@ async def alive_function(message, answers):
         elif dialog.chat.type in (enums.ChatType.GROUP, enums.ChatType.SUPERGROUP):
             group += 1
     if message._client.me.id == OWNER_ID:
-        status = "Owner"
+        status = "[owner]"
     elif message._client.me.id in SUDO_ID:
-        status = "Admin"
+        status = "[admin]"
     else:
-        status = "Premium"
+        status = "premium"
     start = datetime.now()
     await message._client.invoke(Ping(ping_id=0))
     ping = (datetime.now() - start).microseconds / 1000
     uptime = await get_readable_time((time.time() - StartTime))
-    msg = (f"<b>KageUbot</b>\n"
+    msg = (f"<b>Kage-Ubot</b>\n"
         f"   <b>status : {status}</b>\n"
         f"     <b>dc_id: <code>{message._client.me.dc_id}</b>\n"
         f"     <b>ping_dc:</b> <code>{ping} ms</code>\n"
