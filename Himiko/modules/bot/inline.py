@@ -57,6 +57,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 OWNER_ID = [1557184285, 1725671304]
+
 SUDO_ID = [1725671304, 1546078624]
 
 async def alive_function(message, answers):
@@ -68,9 +69,9 @@ async def alive_function(message, answers):
         elif dialog.chat.type in (enums.ChatType.GROUP, enums.ChatType.SUPERGROUP):
             group += 1
     if message._client.me.id == OWNER_ID:
-        status = "[owner]"
+        status = "premium [owner]"
     elif message._client.me.id in SUDO_ID:
-        status = "[admin]"
+        status = "premium [admin]"
     else:
         status = "premium"
     start = datetime.now()
