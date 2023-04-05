@@ -11,7 +11,7 @@ from platform import python_version as y
 
 BOT_VER = "7.2.5"
 CMD_HANDLER = "2.0.100"
-BOTLOG_CHAT = "-1001557500960"
+BOTLOG_CHAT = "-1001922757411"
 MSG_BT = """
 **Kage-Ubot Activated!**
    **Versi**: `{}`
